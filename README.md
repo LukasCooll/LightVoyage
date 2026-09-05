@@ -3,10 +3,10 @@ Light, private, secure and fast browser
 
 <img width="10800" height="7200" alt="Logo" src="https://github.com/user-attachments/assets/6241ffae-df7b-4959-8133-cc2f5020f49a" />
 
-<img width="1919" height="1030" alt="Screenshot 2026-09-05 203437" src="https://github.com/user-attachments/assets/97046cd2-f827-4d45-9505-a1a0b43a44f7" />
-<img width="1919" height="1030" alt="Screenshot 2026-09-05 203418" src="https://github.com/user-attachments/assets/d94fb0f2-8e00-43d4-b657-746f59f706b3" />
-<img width="1919" height="1029" alt="Screenshot 2026-09-05 203156" src="https://github.com/user-attachments/assets/c6137171-d6da-423b-bf9c-662d3464688b" />
-<img width="1919" height="1032" alt="Screenshot 2026-09-05 203451" src="https://github.com/user-attachments/assets/b24162fb-2555-4e0c-ab3e-f6835a345804" />
+<img width="959.5" height="515" alt="Screenshot 2026-09-05 203437" src="https://github.com/user-attachments/assets/97046cd2-f827-4d45-9505-a1a0b43a44f7" />
+<img width="959.5" height="515" alt="Screenshot 2026-09-05 203418" src="https://github.com/user-attachments/assets/d94fb0f2-8e00-43d4-b657-746f59f706b3" />
+<img width="959.5" height="515" alt="Screenshot 2026-09-05 203156" src="https://github.com/user-attachments/assets/c6137171-d6da-423b-bf9c-662d3464688b" />
+<img width="959.5" height="515" alt="Screenshot 2026-09-05 203451" src="https://github.com/user-attachments/assets/b24162fb-2555-4e0c-ab3e-f6835a345804" />
 
 
 
