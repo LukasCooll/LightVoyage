@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LightVoyage</title>
+    <link rel="icon" href="./LogoMinimal.ico" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --bg-body: #ffffff;
+        --bg-tab-bar: #e0e0e0;
+        --bg-tab-inactive: #ccc;
+        --bg-tab-hover: #b8b8b8;
+        --bg-tab-active: #ffffff;
+        
+        --text-tab-inactive: #333333;
+        --text-tab-active: #000000;
+        --text-muted: #888888;
+        --text-dark: #000000;
+        
+        --bg-nav-controls: #f0f0f0;
+        --bg-input: #ffffff;
+        --border-input-focus: #a0c4ff;
+        
+        --btn-hover-bg: #d8d8d8;
+        --btn-color: #333333;
+        --close-hover-bg: #ff4d4d;
+        --close-hover-color: #ffffff;
+        
+        --shadow-nav: rgba(0, 0, 0, 0.08);
+        --focus-glow: rgba(160, 196, 255, 0.4);
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Unbounded', sans-serif;
+        background-color: var(--bg-body);
+        color: var(--text-dark);
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    .tab-bar {
+        display: flex;
+        background: var(--bg-tab-bar);
+        padding: 5px 5px 0 5px;
+        gap: 4px;
+        align-items: center;
+        user-select: none;
+    }
+    .tab-list {
+        display: flex;
+        gap: 4px;
+    }
+    .tab {
+        background: var(--bg-tab-inactive);
+        color: var(--text-tab-inactive);
+        padding: 6px 12px;
+        border-radius: 6px 6px 0 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        max-width: 150px;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .tab:hover {
+        background: var(--bg-tab-hover);
+    }
+    .tab.active {
+        background: var(--bg-tab-active);
+        color: var(--text-tab-active);
+        font-weight: bold;
+    }
+
+    .tab-close {
+        cursor: pointer;
+        font-weight: bold;
+        color: var(--text-muted);
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+    }
+    .tab-close:hover {
+        background-color: var(--close-hover-bg);
+        color: var(--close-hover-color);
+    }
+    .tab-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        flex: 1;
+    }
+
+
+    .nav-controls {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        background: var(--bg-nav-controls);
+        box-shadow: 0 2px 4px var(--shadow-nav);
+        z-index: 10;
+    }
+
+
+    #urlInput {
+        flex: 1;
+        padding: 8px 16px;
+        border: 2px solid transparent;
+        border-radius: 20px;
+        background: var(--bg-input);
+        font-family: 'Unbounded', sans-serif;
+        font-size: 13px;
+        outline: none;
+        transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    #urlInput:focus {
+        border-color: var(--border-input-focus);
+        box-shadow: 0 0 0 3px var(--focus-glow);
+    }
+
+
+    button {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--btn-color);
+        transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+    button:hover {
+        background-color: var(--btn-hover-bg);
+    }
+    button:active {
+        transform: scale(0.92);
+    }
+
+    .add-tab-btn {
+        font-weight: bold;
+        padding: 2px 8px;
+        border-radius: 4px;
+        width: auto;
+        height: auto;
+    }
+
+    .loadUrlButton i, .bookmarkButton i {
+        font-size: 20px !important;
+    }
+
+
+    #webview-container {
+        flex: 1;
+        position: relative;
+    }
+    webview {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    webview.active {
+        display: flex;
+    }
+
+    .indicator {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    .browser-toolbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #bookmarkForm {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+
+</style>
+</head>
+<body>
+    <div class="tab-bar">
+        <div class="tab-list" id="tabList"></div>
+        <button class="add-tab-btn" id="addTabButton">+</button>
+    </div>
+    
+    <div class="nav-controls">
+        <p class="indicator"></p>
+        <button id="ReloadButton">
+            <i class="fa-solid fa-rotate-right"></i>
+        </button>
+        <div class="browser-toolbar">
+            <button id="back-btn" disabled><i class="fa-solid fa-circle-arrow-left"></i></button>
+            <button id="forward-btn" disabled><i class="fa-solid fa-circle-arrow-right"></i></button>
+            <button id="history-dropdown-btn"><i class="fa-solid fa-clock-rotate-left"></i></button>
+        </div>
+        <input type="text" id="urlInput" placeholder="Enter URL">
+        <button class="loadUrlButton">
+            <i style="font-size: 30px;" class="fa-solid fa-circle-up"></i>
+        </button>
+    </div>
+
+    <div id="historyPanel" class="history-panel"></div>
+
+    </div>
+    <div id="webview-container"><h1 style="text-align: center; color: #f0efef; font-size: 100px; margin-top: 50px;">LightVoyage</h1><img src="./LogoGray.png" alt="Logo" style="display: block; margin-left: auto; margin-right: auto; width: 500px;"></div>
+    <script src="main.js"></script>
+</body>
+</html>
+

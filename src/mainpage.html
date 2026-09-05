@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+    <style>
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px; 
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    body {
+        margin: 0;
+        height: 100vh;
+        background-color: #2A7B9B; 
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .inputt {
+        border: 2px solid transparent;
+        width: 30em;
+        height: 2.5em;
+        padding-left: 0.8em;
+        outline: none;
+        overflow: hidden;
+        background-color: #F3F3F3;
+        border-radius: 10px;
+        transition: all 0.5s;
+    }
+
+    .inputt:hover,
+    .inputt:focus {
+        border: 2px solid #4A9DEC;
+        box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+        background-color: white;
+    }
+
+    button {
+        background-color: white;
+        color: #030303;
+        border-radius: 10em;
+        font-size: 17px;
+        padding: 0.5em 1em;
+        cursor: pointer;
+        font-weight: 200;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid #4A9DEC;
+        box-shadow: 0 0 0 0 #4A9DEC;
+    }
+
+    button:hover {
+        transform: translateY(-4px) translateX(-2px);
+        box-shadow: 2px 5px 0 0 #4A9DEC;
+    }
+
+    button:active {
+        transform: translateY(2px) translateX(1px);
+        box-shadow: 0 0 0 0 #4A9DEC;
+    }
+
+    .search-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2em;
+    }
+
+    .content{
+        background-color: rgba(255, 251, 251, 0.918);
+        padding: 10px;
+        border-radius: 10px;
+        width: 600px;
+        margin: 0 auto 10px auto;
+        margin-top: 50px;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <img id="logo" class="logo" src="./Logo.png" alt="Logo">
+    </div>
+
+    <div class="search-container">
+        <form action="https://www.google.com/search" method="get" target="_blank">
+            <img height="auto" src="https://www.google.com/s2/favicons?domain=google.com&sz=32" style="width: 32px; height: 32px;" alt="Google Logo">
+            <input class="inputt" type="text" name="q" placeholder="Search Google..." required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <script>
+    function randomColor() {
+        return `hsl(${Math.random() * 360}, 70%, 60%)`;
+    }
+
+
+    const color1 = randomColor();
+    const color2 = randomColor();
+    const angle = Math.floor(Math.random() * 361);
+
+
+    document.body.style.backgroundImage = `linear-gradient(${angle}deg, ${color1}, ${color2})`;
+
+    const searchInput = document.querySelector('input[name="q"]');
+
+    searchInput.addEventListener("input", () => {
+        window.parent.postMessage({
+            type: "SEARCH_INPUT",
+            value: searchInput.value
+        }, "*");
+    });
+
+    const searchForm = document.querySelector("form");
+
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        window.parent.postMessage({
+            type: "LOAD_URL",
+            url: searchInput.value
+        }, "*");
+    });
+    </script>
+</body>
+</html>
