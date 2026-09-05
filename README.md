@@ -1,20 +1,34 @@
-# LightVoyage
-Light, private, secure and fast browser
+<div align="center">
+  <img width="250" alt="LightVoyage Logo" src="https://github.com/user-attachments/assets/6241ffae-df7b-4959-8133-cc2f5020f49a" />
 
-<img width="10800" height="7200" alt="Logo" src="https://github.com/user-attachments/assets/6241ffae-df7b-4959-8133-cc2f5020f49a" />
+  # LightVoyage
 
-<img width="959.5" height="515" alt="Screenshot 2026-09-05 203437" src="https://github.com/user-attachments/assets/97046cd2-f827-4d45-9505-a1a0b43a44f7" />
-<img width="959.5" height="515" alt="Screenshot 2026-09-05 203418" src="https://github.com/user-attachments/assets/d94fb0f2-8e00-43d4-b657-746f59f706b3" />
-<img width="959.5" height="515" alt="Screenshot 2026-09-05 203156" src="https://github.com/user-attachments/assets/c6137171-d6da-423b-bf9c-662d3464688b" />
-<img width="959.5" height="515" alt="Screenshot 2026-09-05 203451" src="https://github.com/user-attachments/assets/b24162fb-2555-4e0c-ab3e-f6835a345804" />
+  **Light, private, secure, and fast browser**
+  
+  [![Built with Electron](https://img.shields.io/badge/Built_with-Electron-2B2E3A?style=flat-square&logo=electron&logoColor=9FEAF9)](https://www.electronjs.org/)
+  [![License](https://img.shields.io/badge/License-ISC-blue.svg?style=flat-square)](https://opensource.org/licenses/ISC)
+</div>
 
-
-
-
-# LightVoyage
+<br />
 
 LightVoyage is a lightweight desktop web browser built with Electron. It focuses on a simple, fast browsing experience with tab support, navigation controls, and a clean custom interface.
 
+---
+
+## 📸 Screenshots
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><img width="450" alt="Browser View 1" src="https://github.com/user-attachments/assets/97046cd2-f827-4d45-9505-a1a0b43a44f7" /></td>
+      <td align="center"><img width="450" alt="Browser View 2" src="https://github.com/user-attachments/assets/d94fb0f2-8e00-43d4-b657-746f59f706b3" /></td>
+    </tr>
+    <tr>
+      <td align="center"><img width="450" alt="Browser View 3" src="https://github.com/user-attachments/assets/c6137171-d6da-423b-bf9c-662d3464688b" /></td>
+      <td align="center"><img width="450" alt="Browser View 4" src="https://github.com/user-attachments/assets/b24162fb-2555-4e0c-ab3e-f6835a345804" /></td>
+    </tr>
+  </table>
+</div>
 ## Features
 
 - Multi-tab browsing
