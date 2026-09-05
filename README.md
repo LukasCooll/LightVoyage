@@ -1,4 +1,5 @@
 <div align="center">
+  ### ✦ Currently in development
   <img width="250" alt="LightVoyage Logo" src="https://github.com/user-attachments/assets/6241ffae-df7b-4959-8133-cc2f5020f49a" />
 
   # LightVoyage
