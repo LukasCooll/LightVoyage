@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<title>New Tab</title>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;height:100vh;background-color:#2A7B9B;font-family:Arial,sans-serif}
+form{display:flex;justify-content:center;align-items:center;gap:10px}
+.inputt{border:2px solid transparent;width:30em;height:2.5em;padding:0 .8em;outline:none;background-color:rgba(243,243,243,.95);border-radius:10px;transition:border-color .25s ease,box-shadow .25s ease,background-color .25s ease;box-sizing:border-box}
+.inputt:hover{border-color:#4A9DEC;background-color:white}
+.inputt:focus{border-color:#4A9DEC;box-shadow:0 0 0 5px rgba(74,157,236,.2);background-color:white}
+button{background-color:white;color:#030303;border-radius:10em;font-size:17px;padding:.5em 1em;cursor:pointer;font-weight:400;transition:all .2s ease;border:1px solid #4A9DEC;box-shadow:0 0 0 0 rgba(74,157,236,0)}
+button:hover{border-color:#4A9DEC;box-shadow:0 0 0 5px rgba(74,157,236,.2);transform:translateY(-1px)}
+button:focus-visible{outline:none;border-color:#4A9DEC;box-shadow:0 0 0 5px rgba(74,157,236,.2)}
+button:active{transform:translateY(1px);box-shadow:0 0 0 3px rgba(74,157,236,.15)}
+.content{background:rgba(255,251,251,.92);padding:20px;border-radius:18px;width:600px;height:200px;margin:50px auto 10px;display:flex;justify-content:center;align-items:center;box-sizing:border-box}
+.logo{width:500px;max-width:100%;height:auto;max-height:170px;object-fit:contain;display:block}
+.bookmarks{color:white;padding:10px;border-radius:10px;width:600px;margin:30px auto 10px;display:flex;align-items:center;gap:10px;box-sizing:border-box}
+#addBookmark{width:42px;height:42px;padding:0;display:flex;justify-content:center;align-items:center}
+#bookmarkList{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.bookmarkitem{width:42px;height:42px;padding:8px;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;transition:all .2s ease}
+.bookmarkitem:hover{background:rgba(255,255,255,.4);transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,.12)}
+.bookmarkimg{width:20px;height:20px;display:block}
+.popup-overlay{position:fixed;inset:0;width:100%;height:100%;background:rgba(0,0,0,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:999;display:none}
+.popup-overlay.open{display:block}
+.bookmarkpopup{background:rgba(255,255,255,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);width:min(500px,calc(100% - 40px));box-sizing:border-box;padding:28px;border-radius:22px;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.95);opacity:0;z-index:1000;display:none;flex-direction:column;gap:8px;box-shadow:0 25px 60px rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.6)}
+.bookmarkpopup.open{display:flex;animation:popupOpen .2s ease forwards}
+@keyframes popupOpen{from{opacity:0;transform:translate(-50%,-50%) scale(.95)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+.bookmarkpopup h1{font-size:22px;font-weight:600;margin:0 0 10px;color:#222}
+.bookmarkpopup label{font-size:14px;font-weight:600;color:#444;margin-top:5px}
+.bookmarkpopup input{width:100%;height:44px;box-sizing:border-box;border:1px solid #d8d8d8;border-radius:11px;padding:0 13px;font-size:15px;background:rgba(245,245,245,.9);outline:none;transition:all .2s ease}
+.bookmarkpopup input:hover{border-color:#aaa;background:white}
+.bookmarkpopup input:focus{border-color:#4A9DEC;background:white;box-shadow:0 0 0 4px rgba(74,157,236,.15)}
+.bmclose{align-self:flex-end;width:34px;height:34px;padding:0;border:none;background:#f1f1f1;color:#555;border-radius:50%;font-size:18px;font-weight:600;transition:all .2s ease}
+.bmclose:hover{background:#e7e7e7;color:#111;transform:scale(1.05);box-shadow:none}
+.bmsubmit{width:100%;height:44px;margin-top:14px;border:none;border-radius:11px;background:#4A9DEC;color:white;font-size:15px;font-weight:600;box-shadow:0 5px 15px rgba(74,157,236,.25)}
+.bmsubmit:hover{background:#398bd8;border:none;color:white;box-shadow:0 7px 20px rgba(74,157,236,.35);transform:translateY(-2px)}
+.search-container{display:flex;justify-content:center;align-items:center;margin-top:2em}
+@media(max-width:700px){
+.content{width:calc(100% - 40px);height:180px}
+.logo{width:90%;max-height:150px}
+.bookmarks{width:calc(100% - 40px)}
+.inputt{width:60vw}
+form img{display:none}
+}
+</style>
+</head>
+<body>
+<div class="content">
+<img id="logo" class="logo" src="./Logo.png" alt="Logo">
+</div>
+
+<div class="popup-overlay"></div>
+
+<div class="bookmarks">
+<button id="addBookmark"><i class="fa-solid fa-plus"></i></button>
+<div id="bookmarkList"></div>
+</div>
+
+<div class="bookmarkpopup">
+<button class="bmclose">×</button>
+<h1>Add bookmark</h1>
+<label for="bmname">Name</label>
+<input type="text" id="bmname" placeholder="example">
+<label for="bmurl">URL</label>
+<input type="text" id="bmurl" placeholder="https://example.com">
+<button class="bmsubmit">Add bookmark</button>
+</div>
+
+<div class="search-container">
+<form action="https://www.google.com/search" method="get" target="_blank">
+<img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" style="width:32px;height:32px" alt="Google Logo">
+<input class="inputt" type="text" name="q" placeholder="Search Google..." required>
+<button type="submit">Search</button>
+</form>
+</div>
+
+<script src="./mainpage.js"></script>
+</body>
+</html>
