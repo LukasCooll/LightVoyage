@@ -26,11 +26,15 @@ LightVoyage is a lightweight desktop web browser built with Electron. It focuses
       <td align="center"><img width="450" alt="Browser View 2" src="https://github.com/user-attachments/assets/d94fb0f2-8e00-43d4-b657-746f59f706b3" /></td>
     </tr>
     <tr>
-      <td align="center"><img width="450" alt="Browser View 3" src="https://github.com/user-attachments/assets/c6137171-d6da-423b-bf9c-662d3464688b" /></td>
+      <td align="center"><img width="450" alt="Browser View 3" src="https://github.com/user-attachments/assets/14d6e1b6-3626-4c95-99b9-d1fad111e97e" /></td>
       <td align="center"><img width="450" alt="Browser View 4" src="https://github.com/user-attachments/assets/b24162fb-2555-4e0c-ab3e-f6835a345804" /></td>
     </tr>
   </table>
 </div>
+
+
+
+
 ## Features
 
 - Multi-tab browsing
