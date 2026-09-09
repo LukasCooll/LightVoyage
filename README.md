@@ -1,51 +1,112 @@
-
-### ✦ Currently in development
 <div align="center">
 
-  <img width="250" alt="LightVoyage Logo" src="https://github.com/user-attachments/assets/6241ffae-df7b-4959-8133-cc2f5020f49a" />
+  <img width="220" alt="LightVoyage Logo" src="https://github.com/user-attachments/assets/6241ffae-df7b-4959-8133-cc2f5020f49a" />
 
-  # LightVoyage
+# LightVoyage
 
-  **Light, private, secure, and fast browser**
-  
-  [![Built with Electron](https://img.shields.io/badge/Built_with-Electron-2B2E3A?style=flat-square&logo=electron&logoColor=9FEAF9)](https://www.electronjs.org/)
-  [![License](https://img.shields.io/badge/License-ISC-blue.svg?style=flat-square)](https://opensource.org/licenses/ISC)
+### A fast, focused desktop browser.
+
+**Browse the web without the clutter.**
+
+LightVoyage is a lightweight, customizable desktop browser built with Electron, designed around a clean interface, practical privacy features, and a comfortable browsing experience.
+
+  <br />
+
+[![Built with Electron](https://img.shields.io/badge/Built%20with-Electron-2B2E3A?style=flat-square\&logo=electron\&logoColor=9FEAF9)](https://www.electronjs.org/)
+[![License](https://img.shields.io/badge/License-ISC-blue.svg?style=flat-square)](https://opensource.org/licenses/ISC)
+
+  <br />
+
+**[Features](#features) · [Screenshots](#screenshots) · [Installation](#installation) · [Building](#building) · [Roadmap](#roadmap) · [License](#license)**
+
 </div>
 
 <br />
 
-LightVoyage is a lightweight desktop web browser built with Electron. It focuses on a simple, fast browsing experience with tab support, navigation controls, and a clean custom interface.
+---
+
+## ✦ About
+
+**LightVoyage (LV)** is a desktop web browser focused on keeping browsing **simple, fast, and personal**.
+
+Instead of overwhelming the user with unnecessary UI, LightVoyage keeps the essentials close at hand while providing features such as built-in ad and tracker blocking, customizable backgrounds, themes, bookmarks, and multi-tab browsing.
+
+> **Light browsing. Personal experience.**
+
+---
+
+## ✨ Features
+
+### 🌐 Browsing
+
+* Multi-tab browsing
+* Audio indicators for active tabs
+* Back, forward, and reload controls
+* Session and browsing history controls
+* Customizable new-tab page
+* Favicon support
+* Mouse-wheel link → new-tab behavior
+
+### 🛡️ Privacy
+
+* Built-in ad blocking
+* Tracker blocking powered by **Ghostery**
+* Less unwanted content while browsing
+* Privacy-focused browsing experience
+
+### 🎨 Personalization
+
+Customize your browsing environment with:
+
+* Solid-color backgrounds
+* Gradient backgrounds
+* Random backgrounds
+* Custom images
+* Light and dark themes
+* Personalized new-tab experience
+
+### 🖥️ Desktop
+
+* Native Windows desktop application
+* Packaged application builds
+* Windows installer
+* Electron-powered desktop architecture
 
 ---
 
 ## 📸 Screenshots
 
 <div align="center">
-  <table>
-    <tr>
-      <td align="center"><img width="450" alt="Browser View 1" src="https://github.com/user-attachments/assets/97046cd2-f827-4d45-9505-a1a0b43a44f7" /></td>
-      <td align="center"><img width="450" alt="Browser View 2" src="https://github.com/user-attachments/assets/7b35ac7c-00ac-4882-9e87-51f37c5adf5a" /></td>
-    </tr>
-    <tr>
-      <td align="center"><img width="450" alt="Browser View 3" src="https://github.com/user-attachments/assets/28cda769-d503-4688-8e5b-7aed7619d97b" /></td>
-      <td align="center"><img width="450" alt="Browser View 4" src="https://github.com/user-attachments/assets/b24162fb-2555-4e0c-ab3e-f6835a345804" /></td>
-    </tr>
-  </table>
+
+<img width="95%" alt="LightVoyage Browser" src="https://github.com/user-attachments/assets/6d9db27a-b076-4774-bbf8-dbc042bba1c6" />
+
+<br />
+<br />
+
+<img width="95%" alt="LightVoyage Browser" src="https://github.com/user-attachments/assets/80dd9ae1-d4a4-424d-a9ed-3a8998917e1f" />
+
+<br />
+<br />
+
+<img width="95%" alt="LightVoyage Browser" src="https://github.com/user-attachments/assets/5bd76fca-0692-476f-ba77-dfaea72ff60b" />
+
+<br />
+<br />
+
+<img width="95%" alt="LightVoyage Browser" src="https://github.com/user-attachments/assets/1ccb5dd9-5db1-49b3-a947-126f59f187c9" />
+
 </div>
 
+---
 
+## 🚀 Installation
 
+Clone the repository:
 
-
-## Features
-
-- Multi-tab browsing
-- Back, forward, and reload controls
-- Address bar for direct navigation
-- Minimal, distraction-free UI
-- Desktop app packaging with Electron Forge
-
-## Getting Started
+```bash
+git clone https://github.com/YOUR_USERNAME/LightVoyage.git
+cd LightVoyage
+```
 
 Install dependencies:
 
@@ -53,28 +114,83 @@ Install dependencies:
 npm install
 ```
 
-Run the app:
+Start LightVoyage:
 
 ```bash
 npm start
 ```
 
-## Build
+---
 
-Create a packaged desktop build:
+## 🔨 Building
+
+Create a packaged application:
 
 ```bash
 npm run make
 ```
 
-## Project Structure
+Create the Windows installer:
 
-- `src/` — browser UI, layout, and page logic
-- `main.js` — Electron main process
-- `preload.js` — preload script for safe browser integration
-- `static/` — assets and static resources
+```bash
+npm run build-installer
+```
 
-## License
+The generated builds will be placed in the project's output directory.
 
-This project is licensed under the ISC License.
-<img width="10800" height="7200" alt="Logo" src="https://github.com/user-attachments/assets/a46e9909-761d-48a8-97dc-6660a12d3907" />
+---
+
+## 🧰 Tech Stack
+
+| Technology             | Purpose                   |
+| ---------------------- | ------------------------- |
+| **Electron**           | Desktop browser framework |
+| **JavaScript**         | Application logic         |
+| **HTML / CSS**         | User interface            |
+| **Ghostery Adblocker** | Ad & tracker blocking     |
+| **Electron Forge**     | Packaging & distribution  |
+
+---
+
+## 🗺️ Roadmap
+
+LightVoyage is actively evolving.
+
+* [ ] Improved browser performance
+* [ ] More customization options
+* [ ] Better tab management
+* [ ] Download manager
+* [ ] Improved bookmark management
+* [ ] Keyboard shortcuts
+* [ ] Browser settings
+* [ ] Additional privacy controls
+* [ ] More polished Windows integration
+* [ ] Release builds for wider distribution
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and bug reports are welcome.
+
+If you find a problem or have an idea for LightVoyage, feel free to open an **Issue** or submit a **Pull Request**.
+
+---
+
+## 📄 License
+
+LightVoyage is licensed under the **ISC License**.
+
+See the `LICENSE` file for the complete license text.
+
+---
+
+<div align="center">
+
+### LightVoyage
+
+**A simpler way to browse.**
+
+Built with ❤️ and Electron.
+
+</div>
