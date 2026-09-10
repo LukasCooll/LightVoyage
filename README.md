@@ -6,7 +6,6 @@
 
 ### A fast, focused desktop browser.
 
-**Browse the web without the clutter.**
 
 LightVoyage is a lightweight, customizable desktop browser built with Electron, designed around a clean interface, practical privacy features, and a comfortable browsing experience.
 
