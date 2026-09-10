@@ -16,6 +16,11 @@ LightVoyage is a lightweight, customizable desktop browser built with Electron, 
 
   <br />
 
+  <a href="https://github.com/LukasCooll/LightVoyage/releases/latest">
+  <img src="https://img.shields.io/badge/Download-LightVoyage-blue?style=for-the-badge" alt="Download LightVoyage">
+</a>
+
+
 **[Features](#features) · [Screenshots](#screenshots) · [Installation](#installation) · [Building](#building) · [License](#license)**
 
 </div>
