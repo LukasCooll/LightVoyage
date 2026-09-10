@@ -152,23 +152,6 @@ The generated builds will be placed in the project's output directory.
 
 ---
 
-## 🗺️ Roadmap
-
-LightVoyage is actively evolving.
-
-* [ ] Improved browser performance
-* [ ] More customization options
-* [ ] Better tab management
-* [ ] Download manager
-* [ ] Improved bookmark management
-* [ ] Keyboard shortcuts
-* [ ] Browser settings
-* [ ] Additional privacy controls
-* [ ] More polished Windows integration
-* [ ] Release builds for wider distribution
-
----
-
 ## 🤝 Contributing
 
 Contributions, suggestions, and bug reports are welcome.
